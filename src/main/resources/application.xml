@@ -7,9 +7,7 @@
         <property name="locations" value="application.properties"/>
     </bean>
 
-    <bean id="driver" class="java.lang.String">
-        <constructor-arg type="java.lang.String" value="${db.driver}"/>
-    </bean>
+    <bean class="org.example.bfpp.LogBeanFactoryPostProcessor"/>
 
     <bean id="pool1" name="p1,p2,p3" class="org.example.database.pool.ConnectionPool"
     init-method="init"
@@ -23,14 +21,13 @@
             <list>
                 <value>--arg1=value1</value>
                 <value>--arg2=value2</value>
-                <ref bean="driver"/>
             </list>
         </constructor-arg>
         <property name="properties">
             <map>
                 <entry key="url" value="postgresurl"/>
                 <entry key="password" value="123"/>
-                <entry key="driver" value-ref="driver"/>
+                <entry key="driver" value="${db.driver}"/>
             </map>
         </property>
     </bean>
