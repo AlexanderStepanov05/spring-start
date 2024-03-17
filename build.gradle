@@ -16,6 +16,8 @@ dependencies {
     implementation 'org.springframework:spring-core:6.1.4'
     implementation 'org.springframework:spring-context:6.1.4'
 
+    implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0-M1'
+
 }
 
 test {
