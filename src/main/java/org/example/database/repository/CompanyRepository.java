@@ -5,6 +5,7 @@ import org.example.bpp.Transaction;
 import org.example.database.entity.Company;
 import org.example.database.pool.ConnectionPool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -16,7 +17,7 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
     private final ConnectionPool connectionPool;
 
     @Autowired
-    public CompanyRepository(ConnectionPool connectionPool) {
+    public CompanyRepository(@Qualifier("pool2") ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
 

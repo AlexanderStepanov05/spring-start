@@ -4,23 +4,5 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
-<!--        <property name="locations" value="application.properties"/>-->
-<!--    </bean>-->
-
-    <context:component-scan base-package="org.example"/>
-
-    <context:property-placeholder location="application.properties"/>
-
-
-
-    <bean id="pool1" name="p1,p2,p3" class="org.example.database.pool.ConnectionPool">
-        <constructor-arg name="username" type="java.lang.String" value="${db.username}"/>
-        <constructor-arg name="poolSize" type="java.lang.Integer" value="${db.pool.size}"/>
-    </bean>
-
-    <bean id="companyRepository" class="org.example.database.repository.CompanyRepository" factory-method="of">
-        <constructor-arg ref="pool1"/>
-    </bean>
 
 </beans>
