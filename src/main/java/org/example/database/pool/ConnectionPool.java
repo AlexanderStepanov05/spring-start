@@ -2,10 +2,12 @@ package org.example.database.pool;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component("pool1")
 public class ConnectionPool {
     private final String username;
@@ -21,11 +23,11 @@ public class ConnectionPool {
 
     @PostConstruct
     private void init() {
-        System.out.println("init connection pool");
+        log.info("init connection pool");
     }
 
     @PreDestroy
     private void destroy() {
-        System.out.println("clean connection pool");
+        log.info("clean connection pool");
     }
 }

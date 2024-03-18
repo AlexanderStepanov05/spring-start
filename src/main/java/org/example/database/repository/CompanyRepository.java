@@ -1,6 +1,7 @@
 package org.example.database.repository;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.example.bpp.Transaction;
 import org.example.database.entity.Company;
 import org.example.database.pool.ConnectionPool;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Slf4j
 @Repository
 @Transaction
 public class CompanyRepository implements CrudRepository<Integer, Company> {
@@ -23,7 +25,7 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     @PostConstruct
     private void init() {
-        System.out.println("Init CompanyRepository...");
+        log.info("Init CompanyRepository...");
     }
 
     @Override
