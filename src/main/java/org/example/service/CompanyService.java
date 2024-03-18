@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.example.database.entity.Company;
 import org.example.database.repository.CrudRepository;
 import org.example.dto.CompanyReadDto;
-import org.example.listemer.entity.AccessType;
-import org.example.listemer.entity.EntityEvent;
+import org.example.listener.entity.AccessType;
+import org.example.listener.entity.EntityEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
