@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.Optional;
 
 @Slf4j
@@ -31,7 +32,7 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
     @Override
     public Optional<Company> findById(Integer id) {
         System.out.println("Find by id method...");
-        return Optional.of(new Company(id));
+        return Optional.of(new Company(id, null, Collections.emptyMap()));
     }
 
     @Override
