@@ -19,6 +19,7 @@ db:
   logging:
     level:
       root: INFO
+      org.springframework.jdbc.core: DEBUG
     file:
       name: application.log
       path: /
@@ -32,6 +33,8 @@ spring:
   jpa:
     properties:
       hibernate:
+        batch_size: 50
+        fetch_size: 50
         show_sql: true
         format_sql: true
         hbm2ddl:

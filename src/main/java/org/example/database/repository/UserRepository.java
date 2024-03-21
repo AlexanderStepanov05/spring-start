@@ -59,4 +59,5 @@ public interface UserRepository extends
             "from users where company_id = :companyId;",
             nativeQuery = true)
     List<PersonalInfoInterface> findAllByCompanyId(Integer companyId);
+
 }
