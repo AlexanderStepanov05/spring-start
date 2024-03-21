@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.example.database.entity.Company;
 import org.example.database.repository.CompanyRepository;
-import org.example.integration.annotation.IT;
+import org.example.integration.IntegrationTestBase;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.Rollback;
 
@@ -12,11 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@IT
+
 @RequiredArgsConstructor
 //@Transactional
 @Rollback
-class CompanyRepositoryTest {
+class CompanyRepositoryTest extends IntegrationTestBase {
 
     private final EntityManager entityManager;
 
