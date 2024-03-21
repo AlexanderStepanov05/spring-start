@@ -1,7 +1,7 @@
 package org.example.service;
 
 import org.example.database.entity.Company;
-import org.example.database.repository.CrudRepository;
+import org.example.database.repository.CompanyRepository;
 import org.example.dto.CompanyReadDto;
 import org.example.listener.entity.EntityEvent;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class CompanyServiceTest {
     public static final Integer COMPANY_ID = 1;
 
     @Mock
-    private CrudRepository<Integer, Company> companyRepository;
+    private CompanyRepository companyRepository;
 
     @Mock
     private UserService userService;

@@ -1,8 +1,7 @@
 package org.example.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.database.entity.Company;
-import org.example.database.repository.CrudRepository;
+import org.example.database.repository.CompanyRepository;
 import org.example.dto.CompanyReadDto;
 import org.example.listener.entity.AccessType;
 import org.example.listener.entity.EntityEvent;
@@ -15,7 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CompanyService {
 
-    private final CrudRepository<Integer, Company> companyRepository;
+    private final CompanyRepository companyRepository;
     private final UserService userService;
     private final ApplicationEventPublisher eventPublisher;
 
