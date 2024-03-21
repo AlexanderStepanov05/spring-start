@@ -1,9 +1,13 @@
+--liquibase formatted sql
+
+--changeset alexander:1
 CREATE TABLE IF NOT EXISTS company
 (
     id SERIAL PRIMARY KEY ,
     name VARCHAR(64) NOT NULL UNIQUE
     );
 
+--changeset alexander:2
 CREATE TABLE IF NOT EXISTS company_locales
 (
     company_id INT REFERENCES company (id),
@@ -12,6 +16,7 @@ CREATE TABLE IF NOT EXISTS company_locales
     PRIMARY KEY (company_id, lang)
     );
 
+--changeset alexander:3
 CREATE TABLE IF NOT EXISTS users
 (
     id BIGSERIAL PRIMARY KEY ,
@@ -23,6 +28,7 @@ CREATE TABLE IF NOT EXISTS users
     company_id INT REFERENCES company (id)
     );
 
+--changeset alexander:4
 CREATE TABLE IF NOT EXISTS payment
 (
     id BIGSERIAL PRIMARY KEY ,
@@ -30,12 +36,14 @@ CREATE TABLE IF NOT EXISTS payment
     receiver_id BIGINT NOT NULL REFERENCES users (id)
     );
 
+--changeset alexander:5
 CREATE TABLE IF NOT EXISTS chat
 (
     id BIGSERIAL PRIMARY KEY ,
     name VARCHAR(64) NOT NULL UNIQUE
     );
 
+--changeset alexander:6
 CREATE TABLE IF NOT EXISTS users_chat
 (
     id BIGSERIAL PRIMARY KEY ,

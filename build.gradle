@@ -37,6 +37,9 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     testImplementation "org.testcontainers:postgresql:1.19.7"
+
+    implementation 'org.liquibase:liquibase-core:4.26.0'
+
 }
 
 //querydsl {
