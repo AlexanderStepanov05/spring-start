@@ -25,6 +25,12 @@ db:
       path: /
 
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    format:
+      date: iso
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres
     username: postgres
@@ -39,6 +45,7 @@ spring:
         format_sql: true
         hbm2ddl:
           auto: update
+    open-in-view: false
 
 
 
