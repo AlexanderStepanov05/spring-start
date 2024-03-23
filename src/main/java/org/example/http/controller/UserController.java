@@ -1,7 +1,9 @@
 package org.example.http.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.database.entity.Role;
 import org.example.dto.UserCreateEditDto;
+import org.example.service.CompanyService;
 import org.example.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -16,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class UserController {
 
     private final UserService userService;
+    private final CompanyService companyService;
 
     @GetMapping
     public String findAll(Model model) {
@@ -28,10 +31,20 @@ public class UserController {
     public String findById(@PathVariable("id") Long id, Model model) {
         return userService.findById(id)
                         .map(user -> {
-                            model.addAttribute("user", userService.findById(id));
+                            model.addAttribute("user", user);
+                            model.addAttribute("roles", Role.values());
+                            model.addAttribute("companies", companyService.findAll());
                             return "user/user";
                         })
                 .orElseThrow(() -> new ResponseStatusException(HttpStatusCode.valueOf(404)));
+    }
+
+    @GetMapping("/registration")
+    public String registration(Model model, @ModelAttribute("user") UserCreateEditDto user) {
+        model.addAttribute("user", user);
+        model.addAttribute("roles", Role.values());
+        model.addAttribute("companies", companyService.findAll());
+        return "user/registration";
     }
 
     @PostMapping
