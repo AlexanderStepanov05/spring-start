@@ -46,22 +46,22 @@ spring:
         hbm2ddl:
           auto: update
     open-in-view: false
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            clientId: 680252007444-6aa64vrll1l4u5nsl3rsvnlqglhi81nc.apps.googleusercontent.com
-            clientSecret: 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
-            redirectUri: http://localhost:8080/login/oauth2/code/google
-            scope: openid,email,profile
-  springdoc:
-    swagger-ui:
-      oauth:
-        client-id: 680252007444-6aa64vrll1l4u5nsl3rsvnlqglhi81nc.apps.googleusercontent.com
-        client-secret: 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
-        scopes: openid,email,profile
-      oauth2-redirect-url: http://localhost:8080/swagger-ui/oauth2-redirect.html
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            clientId: 680252007444-6aa64vrll1l4u5nsl3rsvnlqglhi81nc.apps.googleusercontent.com
+#            clientSecret: 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
+#            redirectUri: http://localhost:8080/login/oauth2/code/google
+#            scope: openid,email,profile
+#  springdoc:
+#    swagger-ui:
+#      oauth:
+#        client-id: 680252007444-6aa64vrll1l4u5nsl3rsvnlqglhi81nc.apps.googleusercontent.com
+#        client-secret: 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
+#        scopes: openid,email,profile
+#      oauth2-redirect-url: http://localhost:8080/swagger-ui/oauth2-redirect.html
 
 
 
